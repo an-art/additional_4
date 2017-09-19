@@ -23,6 +23,7 @@ module.exports = function multiply(first, second) {
 			} 
 			return sum; 
 		}); 
+if (prev_result!=0) res[i][fir.length] = prev_result;
 		var new_i = i; 
 		while (new_i!=0) { 
 			res[i].unshift(0); 
@@ -30,6 +31,7 @@ module.exports = function multiply(first, second) {
 		} 
 		var rl = res[i].length;
 	} 
+	//console.log(res);
 	
 	var prod = []; 
 	var prev_res = 0;
@@ -45,11 +47,11 @@ module.exports = function multiply(first, second) {
 		prod[j] = prev_res + rest; 
 		rl2--; 
 		prev_res = result; 
-		if (prod[j]>=10 && rl2>0) { 
+		if (prod[j]>=10 && !prod[rl-1]) { 
 			prod[j] -= 10; 
 			prev_res++; 
 		} 
 	} 
-	
+	//console.log(prod);
 	return prod.reverse().join(''); 
 	}
