@@ -31,7 +31,7 @@ if (prev_result!=0) res[i][fir.length] = prev_result;
 		} 
 		var rl = res[i].length;
 	} 
-	//console.log(res);
+	
 	
 	var prod = []; 
 	var prev_res = 0;
@@ -47,11 +47,14 @@ if (prev_result!=0) res[i][fir.length] = prev_result;
 		prod[j] = prev_res + rest; 
 		rl2--; 
 		prev_res = result; 
+
 		while (prod[j]>=10 && !prod[rl-1]) { 
 			prod[j] -= 10; 
 			prev_res++; 
 		} 
 	} 
-	//console.log(prod);
+
 	return prod.reverse().join(''); 
+
 	}
+
